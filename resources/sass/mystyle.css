@@ -1,0 +1,85 @@
+.bg-gray2 {
+    background-color: #3dd5f3;
+}
+
+.text-wrap-break {
+    overflow-wrap: break-word;
+    width: 90%;
+}
+
+.link-blue {
+    color: var(--bs-link-color);
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
+
+.add_card {
+    border: dashed darkgrey medium;
+    width: 342px;
+    height: 215px;
+    border-radius: 3%;
+    margin-left: -53px;
+}
+
+.add_card img {
+    height: 80px;
+    width: 80px;
+}
+
+.move-right {
+    margin-left: 53px;
+}
+
+.address-img:before {
+    background-image: url("../img/geo-alt-fill.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: " ";
+    position: relative;
+    top: 20px;
+    left: -20px;
+}
+
+.email-img:before {
+    background-image: url("../img/at.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height:20px;
+    content: " ";
+    position: relative;
+    top: 25px;
+    left: -20px;
+}
+
+.phone-img:before {
+    background-image: url("../img/telephone.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height:20px;
+    content: " ";
+    position: relative;
+    top: 25px;
+    left: -20px;
+}
+
+/*.bg-footer {*/
+/*    background-image: url("../img/metro_stantion.jpg") ;*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: -290px -600px;*/
+/*    background-color:rgba(0, 0, 0, 0.9);*/
+/*}*/
+
+.map {
+    height: 600px;
+    width: 900px;
+    background-color: #1a1e21;
+}
+
+[class*="copyrights-pane"] {
+    display: none !important;
+}

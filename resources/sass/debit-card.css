@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-debit {
+    width: 340px;
+    height: 210px;
+    border-radius: 20px;
+
+    padding: 0;
+    margin: 0;
+
+    margin-left: -53px;
+}
+
+.card-debit:hover {
+    box-shadow: 5px 3px 5px #000000a2;
+}
+
+.card-debit p {
+    padding: 0;
+    margin: 0;
+}
+
+.card-1 {
+    background-image: linear-gradient(180deg, #442A2D 0%, #A03338 100%);
+    height: 180px;
+    border-radius: 5px;
+}
+
+.card-2 {
+    background-color: #C6C7CB;
+    height: 50px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+    top: -20px;
+    z-index: 134;
+}
+
+.card-bottom-left {
+    width: 130px;
+    font-size: 9px;
+    padding: 7px 0 0 20px;
+    line-height: 10px;
+    font-weight: 520;
+}
+
+@font-face {
+    font-family: 'Code-128';
+    src: url('../fonts/code128.ttf');
+}
+
+.card-bottom-right {
+    font-family: 'Code-128', serif;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -7px;
+}
+
+.card-info-1 {
+    padding-left: 20px;
+    line-height: 15px;
+}
+
+.card-info-2 {
+    margin: 25px 15px 0 0;
+    position: relative;
+    bottom: -10px;
+}
+
+.text-small {
+    font-size: 11px;
+    line-height: 7px;
+}
