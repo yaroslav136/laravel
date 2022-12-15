@@ -41,7 +41,7 @@ class CardsController extends Controller
         if (auth()->user()->id != $card->userId)
             return redirect()->route('cards.index');
 
-        $cards = Card::all();
+        $cards = Card::all()->where('userId', auth()->user()->id);
         return view('cards.show', compact('card', 'cards'));
     }
 
