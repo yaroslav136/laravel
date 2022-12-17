@@ -14,57 +14,57 @@
     @stack('styles')
 </head>
 <body class="bg-white">
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-                <li>
-                    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand">
-                        <img width="300" src="{{ asset('img/logo.png') }}">
-                    </a>
-                </li>
-                <li class="nav-item"><a href="{{ route('cards.index') }}" class="nav-link px-2 text-black fw-bold">Проездные карты</a></li>
-                <li class="nav-item"><a href="{{ route('claims.create') }}" class="nav-link px-2 text-black fw-bold">Обращения</a></li>
-                <li class="nav-item"><a href="{{ route('review.index_create') }}" class="nav-link px-2 text-black fw-bold">Отзывы</a></li>
-                <li class="nav-item"><a href="{{ route('map') }}" class="nav-link px-2 text-black fw-bold">Карта станций</a></li>
-            </ul>
+        <a href="/" class="col-md-3 mb-2 mb-md-0 text-dark text-decoration-none navbar-brand d-block" style="width: 300px">
+            <img width="300" src="{{ asset('img/logo.png') }}">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav w-100">
+                <a href="{{ route('cards.index') }}" class="nav-link px-2 text-black fw-bold">Проездные карты</a>
+                <a href="{{ route('claims.create') }}" class="nav-link px-2 text-black fw-bold">Обращения</a>
+                <a href="{{ route('review.index_create') }}" class="nav-link px-2 text-black fw-bold">Отзывы</a>
+                <a href="{{ route('map') }}" class="nav-link px-2 text-black fw-bold me-auto">Карта станций</a>
+                <ul class="nav-link ms-2" style="height: 25px; margin-top: -10px;">
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Войти</a>
+                            </li>
+                        @endif
 
-            <ul class="navbar-nav ms-auto">
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Войти</a>
-                        </li>
-                    @endif
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </a>
 
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Выйти</a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>
-
 
 <main class="container my-5" style="min-height: calc(100vh - 388px);">
     @yield('content')
